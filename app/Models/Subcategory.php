@@ -13,6 +13,7 @@ class Subcategory extends Model
         'subcategory_name_sinhala',
         'subcategory_slag_en',
         'subcategory_slag_sinhala',
+        'category_id',
      
      
     ];

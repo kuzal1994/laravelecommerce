@@ -78,8 +78,8 @@ Route::prefix('category')->group(function(){
 //admin sub category routes
 Route::prefix('subcategory')->group(function(){
     Route::get('/view',[SubCategoryController::class, 'allsubcategoryview'])->name('all.subcategory');
-    Route::post('/store',[CategoryController::class, 'categorystore'])->name('category.store');
-    Route::get('/edit/{id}',[CategoryController::class, 'categoryedit'])->name('category.edit');
+    Route::post('/store',[SubCategoryController::class, 'subcategorystore'])->name('subcategory.store');
+    Route::get('/edit/{id}',[SubCategoryController::class, 'subcategoryedit'])->name('subcategory.edit');
     Route::post('/update',[CategoryController::class, 'categoryupdate'])->name('category.update');
     Route::get('/delete/{id}',[CategoryController::class, 'categorydelete'])->name('category.delete');
     
