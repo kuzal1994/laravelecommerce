@@ -34,7 +34,11 @@ class CategoryController extends Controller
             
                
     ]);
-              return redirect()->back();
+    $notification = array(
+        'message' => 'Brand Inserted Successfully',
+        'alert-type' => 'success'
+    );
+              return redirect()->back()->with($notification);
     }
     public function categoryedit($id){
         $category=Category::findOrFail($id);

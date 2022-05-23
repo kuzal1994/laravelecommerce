@@ -77,13 +77,7 @@ class BrandController extends Controller
                   'brand_slug_sinhala'=>strtolower(str_replace('','-',$request->brand_name_sinhala)),
                   'brand_image'=>$save_url,
                ]);
-                  $notification=array(
-                   'message'=>'Product updated Successfully',
-                   'alert-type'=>'info',
-                   
-                   
-                  );
-                  return redirect()->route('all.brand')->with($notification);
+                  
                        
 
         }else{
@@ -99,7 +93,7 @@ class BrandController extends Controller
                 
                 
                );
-            return redirect()->route('all.brand');
+            return redirect()->route('all.brand')->with($notification);
         }
     }
     public function branddelete($id){

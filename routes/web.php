@@ -76,14 +76,17 @@ Route::prefix('category')->group(function(){
 });
 
 //admin sub category routes
-Route::prefix('subcategory')->group(function(){
-    Route::get('/view',[SubCategoryController::class, 'allsubcategoryview'])->name('all.subcategory');
-    Route::post('/store',[SubCategoryController::class, 'subcategorystore'])->name('subcategory.store');
-    Route::get('/edit/{id}',[SubCategoryController::class, 'subcategoryedit'])->name('subcategory.edit');
-    Route::post('/update',[CategoryController::class, 'categoryupdate'])->name('category.update');
-    Route::get('/delete/{id}',[CategoryController::class, 'categorydelete'])->name('category.delete');
+
+    Route::get('/sub/view',[SubCategoryController::class, 'allsubcategoryview'])->name('all.subcategory');
+    Route::post('/sub/store',[SubCategoryController::class, 'subcategorystore'])->name('subcategory.store');
+    Route::get('/sub/edit/{id}',[SubCategoryController::class, 'subcategoryedit'])->name('subcategory.edit');
+    Route::post('/sub/update',[SubCategoryController::class, 'subcategoryupdate'])->name('subcategory.update');
+    Route::get('/sub/delete/{id}',[SubCategoryController::class, 'subcategorydelete'])->name('subcategory.delete');
+
+    //sub-sub categories
+Route::get('/sub/sub/view',[SubCategoryController::class, 'allsubsubcategoryview'])->name('all.subsubcategory');
+
     
-});
 
 Route::middleware(['auth:sanctum,web', 'verified'])->get('/dashboard', function () {
     $id=Auth::user()->id;

@@ -18,7 +18,7 @@
 
 			 <div class="box">
 				<div class="box-header with-border">
-				  <h3 class="box-title">Edit Brand</h3>
+				  <h3 class="box-title">Edit Category</h3>
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">

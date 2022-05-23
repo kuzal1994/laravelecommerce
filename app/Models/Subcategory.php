@@ -17,5 +17,8 @@ class Subcategory extends Model
      
      
     ];
+    public function catgory(){
+        return $this->belongsTo(Category::class,'category_id','id');
+    }
     
 }

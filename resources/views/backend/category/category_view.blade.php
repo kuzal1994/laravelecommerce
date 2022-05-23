@@ -8,14 +8,14 @@
 		<!-- Main content -->
 		<section class="content">
 		  <div class="row">
-			  
-		
+			   
+		 
 
-			<div class="col-9">
+			<div class="col-8">
 
 			 <div class="box">
 				<div class="box-header with-border">
-				  <h3 class="box-title">Brand List</h3>
+				  <h3 class="box-title">Category List <span class="badge badge-pill badge-danger"> {{ count($category) }} </span></h3>
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
@@ -23,30 +23,30 @@
 					  <table id="example1" class="table table-bordered table-striped">
 						<thead>
 							<tr>
-								<th>Category Name English</th>
-								<th>Category Name Sinhala</th>
-								<th>Icon</th>
+								<th>Category Icon </th>
+								<th>Category En</th>
+								<th>Category Sinhala </th>
 								<th>Action</th>
-							
+								 
 							</tr>
 						</thead>
 						<tbody>
-                            @foreach($category as $item)
-							<tr>
-								<td>{{$item->category_name_en}}</td>
-								<td>{{$item->category_name_sinhala}}</td>
-								<td><span><i class="{{$item->category_icon}}" ></i></span>
-
-
-                                </td>
-								<td>
-                                    <a href="{{route('category.edit',$item->id)}}" class="btn btn-info"><i class="fa fa-pencil"></i></a>
-							    <a href="{{route('category.delete',$item->id)}}"  class="btn btn-danger" id="delete"><i class="fa fa-trash"></i></a>
-
-                                </td>
-							</tr>
-							@endforeach
-
+	 @foreach($category as $item)
+	 <tr>
+	<td> <span><i class="{{ $item->category_icon  }}"></i></span>  </td>
+	 <!--     <td> {{$item->category_icon}}</td> -->
+		<td>{{ $item->category_name_en  }}</td>
+		 <td>{{ $item->category_name_sinhala }}</td>
+		<td width=30%>
+ <a href="{{ route('category.edit',$item->id) }}" class="btn btn-info" title="Edit Data"><i class="fa fa-pencil"></i> </a>
+ <a href="{{ route('category.delete',$item->id) }}" class="btn btn-danger" title="Delete Data" id="delete">
+ 	<i class="fa fa-trash"></i></a>
+		</td>
+							 
+	 </tr>
+	  @endforeach
+						</tbody>
+						 
 					  </table>
 					</div>
 				</div>
@@ -54,8 +54,9 @@
 			  </div>
 			  <!-- /.box -->
 
-		     
+			          
 			</div>
+			<!-- /.col -->
 			<!-- /.col -->
 
 

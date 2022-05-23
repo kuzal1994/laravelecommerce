@@ -41,7 +41,7 @@
 
 
                                 </td>
-								<td>
+								<td width="30%">
                                     <a href="{{route('brand.edit',$item->id)}}" class="btn btn-info">Edit</a>
 							    <a href="{{route('brand.delete',$item->id)}}"  class="btn btn-danger" id="delete">Delete</a>
 

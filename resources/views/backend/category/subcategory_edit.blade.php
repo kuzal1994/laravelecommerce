@@ -21,14 +21,14 @@
 
 			 <div class="box">
 				<div class="box-header with-border">
-				  <h3 class="box-title">Add Category</h3>
+				  <h3 class="box-title">Edit Sub Category</h3>
 				</div>
 				<!-- /.box-header -->
 				<div class="box-body">
 					<div class="table-responsive">
-                    <form method="POST" action="{{route('subcategory.store')}}" enctype="multipart/form-data">
+                    <form method="POST" action="{{route('subcategory.update')}}" enctype="multipart/form-data">
             @csrf
-					 
+					 <input type="hidden" name="id" value="{{ $subcategory->id}}">
             <div class="form-group">
 								<h5>Category Select<span class="text-danger">*</span></h5>
 								<div class="controls">
